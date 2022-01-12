@@ -21,7 +21,9 @@ if __name__ == "__main__":
     model_root = 'Model/'
     result_root = 'Result/'
 
-    # Dataset settings (use code in Util/Generate_ASCAD_X.py to generate ASCAD datasets)
+    # Dataset settings 
+    # Note: Use code in Util/Generate_ASCAD_X.py to generate ASCAD datasets used in the paper (4,000 features, raw traces required)
+    # Note: Attacking on the default ASCAD_F (700 features) or ASCAD_R (1,400 features) would work as well!
     datasetss = ['ASCAD','ASCAD_rand','AESHD'] # ['ASCAD','ASCAD_rand','AESHD']
     leakage_models = ['HW','ID'] # ['HW','ID']
     profiling_traces = 0 # 0: default
