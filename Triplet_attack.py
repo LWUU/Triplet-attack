@@ -16,30 +16,6 @@ import Util.Template_attack as TA
 import Util.Triplet_loss as losses
 
 if __name__ == "__main__":
-    # data_root = '/tudelft.net/staff-umbrella/dlsca/'
-    # model_root = '/tudelft.net/staff-umbrella/dlsca/Lichao/Similiarity_learning/'
-    # result_root = '/home/nfs/lwu3/Project/Similiarity_learning/Result/'
-    # result_data_root = '/home/nfs/lwu3/Project/Similiarity_learning/Result/'
-
-    # datasetss = sys.argv[1].split(',')
-    # leakage_models = sys.argv[2].split(',')
-
-    # batch_size = int(sys.argv[3])
-    # epochs = int(sys.argv[4])
-    # attack_epoch = int(sys.argv[5])
-    # train_flag = int(sys.argv[6])  # either     True or False
-    # classifier = sys.argv[7]
-    # embedding_size = int(sys.argv[8])
-    # noise_type = sys.argv[9]
-    # noise_level = float(sys.argv[10])
-    # alpha_values = float(sys.argv[11])
-    # index = int(sys.argv[12])
-    # margin = float(sys.argv[13])
-    # distance_metric = sys.argv[14]
-    # save_folder = sys.argv[15]
-    # Loss = sys.argv[16]
-    # profiling_traces = int(sys.argv[17])
-    # =================== Testbench ===================
     # File root for dataset and results
     data_root = 'Data/'
     model_root = 'Model/'
