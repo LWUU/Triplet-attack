@@ -1,2 +1,3 @@
 # Supplementary material: Triplet attack
-aaa
+Main code: Triplet_attack.py
+Attack log: Attack_log.py
