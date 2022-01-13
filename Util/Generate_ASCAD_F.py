@@ -26,8 +26,8 @@ def labelize(plaintexts, keys):
     return AES_Sbox[state]
 
 # Define your own root   
-out_file_root = '/usr/local/home/wu/ownCloud/PhD/Data/ASCAD//Base_desync0_4000.h5'
-in_file = h5py.File('/usr/local/home/wu/ownCloud/Raw_dataset/ASCAD_data/ASCAD_databases//ATMega8515_raw_traces.h5', "r")
+out_file_root = '/Base_desync0_4000.h5'
+in_file = h5py.File('/ATMega8515_raw_traces.h5', "r")
 
 traces = in_file["traces"]
 metadata = in_file["metadata"]
