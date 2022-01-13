@@ -41,11 +41,6 @@ AES_Sbox_inv = np.array([
     0x17, 0x2b, 0x04, 0x7e, 0xba, 0x77, 0xd6, 0x26, 0xe1, 0x69, 0x14, 0x63, 0x55, 0x21, 0x0c, 0x7d
 ])
 
-train_begin = 0
-train_end = 20000
-test_begin = 20000
-test_end  = 40000
-
 def labelize(plaintexts, keys):
     #return AES_Sbox[plaintexts[:, 2] ^ keys[:, 2]]
     state = [int(x) ^ int(k) for x, k in zip(np.asarray(plaintexts[:, 2]), keys[:, 2])]
