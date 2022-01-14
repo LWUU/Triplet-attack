@@ -48,7 +48,6 @@ def labelize(plaintexts, keys):
 
 def addGussianNoise(traces, noise_level):
     print('Add Gussian noise: ', noise_level)
-    np.random.seed(42)
     if noise_level == 0:
         return traces
     else:
@@ -64,7 +63,6 @@ def addGussianNoise(traces, noise_level):
 
 def addDesync(traces, desync_level):
     print('Add desync noise...')
-    np.random.seed(42)
     traces_length = len(traces[0])
     #append = np.zeros((len(traces), desync_level))
     #traces = np.concatenate((append, traces, append), axis=1)
