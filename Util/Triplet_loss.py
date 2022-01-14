@@ -2,7 +2,7 @@ import tensorflow as tf
 
 def pairwise_distance(feature, labels, num_classes, alpha_value, squared=False):
     """Computes the pairwise distance matrix with numerical stability.
-    output[i, j] = || feature[i, :] - feature[j, :] ||_2
+    output[i, j] = || feature[i, :] - feature[j, :] ||_2 / alpha^(|| label[i] - label[j] || / num_class)
     Args:
       feature: 2-D Tensor of size `[number of data, feature dimension]`.
       squared: Boolean, whether or not to square the pairwise distances.
@@ -16,7 +16,7 @@ def pairwise_distance(feature, labels, num_classes, alpha_value, squared=False):
         )
         - 2.0 * tf.matmul(feature, tf.transpose(feature))
     )
-    #pairwise_distances_squared = tf_kl(feature)
+
     lable_pairwise_distances_squared = (
         tf.math.add(
             tf.math.square(labels), 
