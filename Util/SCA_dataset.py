@@ -79,30 +79,6 @@ def calculate_HW(data):
     hw = [bin(x).count("1") for x in range(256)]
     return np.array([hw[int(s)] for s in data])
 
-# select POI with CPA
-def POI_selection(traces, label, numPOIs, POIspacing):
-    corr = np.zeros(len(traces[0]))
-
-    for i in range(len(traces[0])):
-        if (traces[:, i] == traces[:, i][0]).all():
-            corr[i] = 0
-        else:
-            corr[i] = abs(stats.pearsonr(traces[:, i], label)[0])
-
-    POIs = []
-    # Repeat until we have enough POIs
-    for i in range(numPOIs):
-        # Find the biggest peak and add it to the list of POIs
-        nextPOI = corr.argmax()
-        POIs.append(nextPOI)
-        # Zero out some of the surrounding points
-        # Make sure we don't go out of bounds
-        poiMin = max(0, nextPOI - POIspacing)
-        poiMax = min(nextPOI + POIspacing, len(corr))
-        for j in range(poiMin, poiMax):
-            corr[j] = 0
-    return POIs
-
 def load_ascad(ascad_database_file, profiling_traces=50000, leakage_model='HW'):
     if profiling_traces == 0:
         profiling_traces = 50000
