@@ -64,9 +64,6 @@ def addGussianNoise(traces, noise_level):
 def addDesync(traces, desync_level):
     print('Add desync noise...')
     traces_length = len(traces[0])
-    #append = np.zeros((len(traces), desync_level))
-    #traces = np.concatenate((append, traces, append), axis=1)
-    #traces = np.zeros((len(traces), len(traces[0])-desync_level))
     if desync_level == 0:
         return traces
     else:
